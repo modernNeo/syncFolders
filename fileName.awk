@@ -23,6 +23,8 @@ NF > 8{
 		$7="8"
 	}else if ($7 == "Sep"){
 		$7="9"
+	}else if ($7 == "Oct"){
+		$7="10"
 	}
 	print theName"\n"$7" "$6" "$8 >out_file;
 	theName="";
