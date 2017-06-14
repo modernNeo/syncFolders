@@ -25,22 +25,22 @@ ls -l ~/Google\ Drive/School/Current\ Classes/2CMPT\ 379/Lecture\ Notes/ > 379Go
 ./fileName.awk 379GoogleFiles.txt 379GoogleFileNames.txt
 
 #cmpt 307
-#ls -l ~/Dropbox/Apps/Papyrus\ App/Nexus\ 9/PDFs/3CMPT\ 307/ > 307DropFileList.txt
+ls -l ~/Dropbox/Apps/Papyrus\ App/Nexus\ 9/PDFs/3CMPT\ 307/ > 307DropFileList.txt
 
-#./fileName.awk 307DropFileList.txt 307DBFileNames.txt
+./fileName.awk 307DropFileList.txt 307DBFileNames.txt
 
-#ls -l ~/Google\ Drive/School/Current\ Classes/3CMPT\ 307/Lecture\ Notes/ > 307GoogleFiles.txt
+ls -l ~/Google\ Drive/School/Current\ Classes/3CMPT\ 307/Lecture\ Notes/ > 307GoogleFiles.txt
 
-#./fileName.awk 307GoogleFiles.txt 307GoogleFileNames.txt
+./fileName.awk 307GoogleFiles.txt 307GoogleFileNames.txt
 
 
-now="$(date +%y-%m-%d-%T)"
+now="$(date +%y-%m-%d-%T).txt"
 printf "last date & time file sync: %s\n" "$now" >> ../logs/"$now"
 printf "Files Synced:\n" >> ../logs/"$now"
 
 #./compare philGoogleFileNames.txt philDBFileNames.txt syncPhil.txt
 ./compare 379GoogleFileNames.txt 379DBFileNames.txt sync379.txt
-#./compare 307GoogleFileNames.txt 307DBFileNames.txt sync307.txt
+./compare 307GoogleFileNames.txt 307DBFileNames.txt sync307.txt
 if [ $? == 0 ]; then
 
 #	cat syncPhil.txt | while read line
@@ -57,14 +57,14 @@ if [ $? == 0 ]; then
 		rm ~/"Dropbox/Apps/Papyrus App/Nexus 9/PDFs/2CMPT 379/$line"
 	done
 
-#	cat sync307.txt | while read line
-#	do
-#		printf "CMPT 307/$line\n" >> logs/"$now"
-#		cp ~/"Dropbox/Apps/Papyrus App/Nexus 9/PDFs/3CMPT 307/$line" ~/Google\ Drive/School/Current\ Classes/3CMPT\ 307/Lecture\ Notes/
-#		rm ~/"Dropbox/Apps/Papyrus App/Nexus 9/PDFs/3CMPT 307/$line"
-#	done
+	cat sync307.txt | while read line
+	do
+		printf "CMPT 307/$line\n" >> ../logs/"$now"
+		cp ~/"Dropbox/Apps/Papyrus App/Nexus 9/PDFs/3CMPT 307/$line" ~/Google\ Drive/School/Current\ Classes/3CMPT\ 307/Lecture\ Notes/
+		rm ~/"Dropbox/Apps/Papyrus App/Nexus 9/PDFs/3CMPT 307/$line"
+	done
 fi
 
-rm 379DropFileList.txt 379DBFileNames.txt 379GoogleFiles.txt 379GoogleFileNames.txt sync379.txt nohup.out
+rm 379DropFileList.txt 379DBFileNames.txt 379GoogleFiles.txt 379GoogleFileNames.txt sync379.txt 307DropFileList.txt 307DBFileNames.txt 307GoogleFiles.txt 307GoogleFileNames.txt sync307.txt nohup.out
 sleep 3600
 done
