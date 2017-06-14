@@ -65,6 +65,6 @@ if [ $? == 0 ]; then
 #	done
 fi
 
-rm philDropFileList.txt philDBFileNames.txt philGoogleFiles.txt philGoogleFileNames.txt 379DropFileList.txt 379DBFileNames.txt 379GoogleFiles.txt 379GoogleFileNames.txt 307DropFileList.txt 307DBFileNames.txt 307GoogleFiles.txt 307GoogleFileNames.txt syncPhil.txt sync379.txt sync307.txt nohup.out
+rm 379DropFileList.txt 379DBFileNames.txt 379GoogleFiles.txt 379GoogleFileNames.txt sync379.txt nohup.out
 sleep 3600
 done
