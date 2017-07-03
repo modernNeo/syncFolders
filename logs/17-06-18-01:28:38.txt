@@ -1,0 +1,20 @@
+last date & time file sync: 17-06-18-01:28:38.txt
+Files Synced:
+CMPT 379/day1_intro.pdf
+CMPT 379/day2_lexer.pdf
+CMPT 379/day3_finite_automata.pdf
+CMPT 379/day4_lexer_implement.pdf
+CMPT 379/day5_grammer.pdf
+CMPT 379/day6_sdt.pdf
+CMPT 379/day7_types.pdf
+CMPT 307/2.4 A Survey Of Common Running Times.pdf
+CMPT 307/3.1 Graph Basic Definitions and Applications.pdf
+CMPT 307/3.2 Graphs Connectivity And Graph Traversal.pdf
+CMPT 307/3.3 Implementing Graph Traversal Using Queues and Stacks.pdf
+CMPT 307/3.4 Testing Bipartiteness An Application Of Breadth-First Search.pdf
+CMPT 307/3.5 Connectivity in Directed Graphs.pdf
+CMPT 307/Lectures_1-2.pdf
+CMPT 307/Lectures_3-4.pdf
+CMPT 307/Lectures_5-6.pdf
+CMPT 307/Tutorial Qs.pdf
+CMPT 307/
