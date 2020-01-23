@@ -1,11 +1,12 @@
 #include "file.h"
 
-#include <filesystem>
-namespace fs = std::filesystem;
+#include <sys/stat.h>
 
 File::File(string theFilePath){
+    struct stat buf;
+    stat(theFilePath.c_str(), &buf);
     filePath = theFilePath;
-    ftime = system_clock::to_time_t(fs::last_write_time(theFilePath));
+    ftime = buf.st_mtime;
     name = theFilePath.substr(theFilePath.find_last_of("/")+1);
 }
 
