@@ -46,7 +46,7 @@ void moveNewFileToGoogle(ofstream & fout, Folder & googleFolder, Folder & dropbo
 			fout<<"Dropbox Filename " << dropBoxFile.getFilePath() << std::endl;
 			fout<<"Dropbox Timestamp " << dropBoxFile.getTime() << std::endl;
 			fout<<"moving file "<< dropBoxFile.getFileName() <<" to " << googleFolder.getFolderPath() +  "/" + dropBoxFile.getFileName() <<std::endl<<std::endl;
-			fs::copy(dropBoxFile.getFilePath(), googleFolder.getFolderPath() +  "/" + dropBoxFile.getFileName());
+			fs::rename(dropBoxFile.getFilePath(), googleFolder.getFolderPath() +  "/" + dropBoxFile.getFileName());
 		}
 		else{
 			File googleFile = *(googleFolder.getFile(dropBoxFile.getFileName()));
@@ -57,7 +57,7 @@ void moveNewFileToGoogle(ofstream & fout, Folder & googleFolder, Folder & dropbo
 
 			if (dropBoxFile > googleFile){
 				fout<<"moving file "<< dropBoxFile.getFileName() << " to " << googleFile.getFileName() <<std::endl<<std::endl;
-				fs::copy(dropBoxFile.getFilePath(), googleFolder.getFolderPath() +  "/" + dropBoxFile.getFileName());
+				fs::rename(dropBoxFile.getFilePath(), googleFolder.getFolderPath() +  "/" + dropBoxFile.getFileName());
 			}else{
 				fout<<"Google's version of "<<  dropBoxFile.getFileName() << " is either the same or newer than Dropboxes" <<std::endl<<std::endl;
 
