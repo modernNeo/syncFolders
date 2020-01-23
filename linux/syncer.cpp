@@ -18,8 +18,10 @@ void moveNewFileToGoogle(ofstream & fout, Folder & googleFolder, Folder & dropbo
 int main(int argc, const char * argv[]){
 
 	std::time_t endTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	string currentTime = std::ctime(&endTime);
-	string fileName = currentTime.substr(0, currentTime.length()-1) + ".log";
+    char currentTime[20];
+    std::strftime(currentTime, sizeof(currentTime), "%Y-%m-%d-%H-%M-%S", std::localtime(&endTime));
+    std::string currentTimeStr(currentTime);
+	string fileName = currentTimeStr + ".log";
 
 	ofstream fout;
 	fout.open(fileName);
